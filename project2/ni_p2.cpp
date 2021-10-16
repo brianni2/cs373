@@ -26,25 +26,18 @@ char toggleGate(char gate, char input) {        //toggles x1
             return 'L';
         }
     }
+    else {
+	return gate;
+    }
 }
 
 char toggleSwitch(char gate, char input) {      //toggle x2, x3, and x4
-    if(input == '0') {                          //0 = L -> R -> L
-        if(gate == 'L') {
+	if(gate == 'L') {
             return 'R';
         }
-        if(gate == 'R') {
+	else {
             return 'L';
         }
-    }
-    if(input == '1') {                          //1 = L -> R -> L
-        if(gate == 'L') {
-            return 'R';
-        }
-        if(gate == 'R') {
-            return 'L';
-        }
-    }
 }
 
 int main() {
