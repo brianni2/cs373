@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 using namespace std;
 
 const int SIZE = 1001;
@@ -76,6 +77,8 @@ int main(int argc, char* argv[]) {
     bool repeat;
     temp.push_back(startState);
     for(int i = 0; i < strInput.size(); i++) {
+	sort(temp.begin(), temp.end());
+	temp.erase(unique(temp.begin(), temp.end()), temp.end());
         nextState = temp;
         temp.clear();
         /*cout << "\nnextState: ";

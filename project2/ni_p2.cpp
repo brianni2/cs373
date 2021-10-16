@@ -35,8 +35,11 @@ char toggleSwitch(char gate, char input) {      //toggle x2, x3, and x4
 	if(gate == 'L') {
             return 'R';
         }
+	if(gate == 'R') {
+		return 'L';
+	}
 	else {
-            return 'L';
+            return gate;
         }
 }
 
