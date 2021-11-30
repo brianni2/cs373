@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
         inFS >> numState;
         //cout << readState << "\t" << numState << "\t";
         if(readState.find("state") != string::npos) {
-            inFS >> specState;
+            getline(inFS, specState);
             //cout << specState << endl;
             if(specState.find("start") != string::npos) {
                 startState = numState;
