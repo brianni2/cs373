@@ -1,0 +1,27 @@
+a >= b and (b|c or c|b)
+ask if the string is sorted (a's followed by b's follwed by c's)
+	symbols can be in any order (not sorted)
+
+1)insert $ and shift symbols - done
+
+2)if only a, reject - done
+
+3)a >= b; otherwise reject - done
+
+4)check b = c
+mark b, rewind
+	if blank, b > c; b = 1, c = 0
+	if c, mark and rewind
+		if b, continue
+		if blank, b = c; accept
+		if c, b < c; b = 0, c = 1
+			
+5)check divisibility
+mark 1, rewind
+	if 0, mark and rewind
+		if 1, continue
+		if blank, rewind
+			if 0, reject
+			if blank, 0|1; accept
+	if blank, unwind 0
+		mark 0 and rewind

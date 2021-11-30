@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 char toggleGate(char gate, char input) {        //toggles x1
@@ -27,27 +29,40 @@ char toggleGate(char gate, char input) {        //toggles x1
         }
     }
     else {
-	return gate;
+        return gate;
     }
 }
 
 char toggleSwitch(char gate, char input) {      //toggle x2, x3, and x4
-	if(gate == 'L') {
+    if(input == '0') {                          //0 = L -> R -> L
+        if(gate == 'L') {
             return 'R';
         }
-	if(gate == 'R') {
-		return 'L';
-	}
-	else {
-            return gate;
+        if(gate == 'R') {
+            return 'L';
         }
+    }
+    if(input == '1') {                          //1 = L -> R -> L
+        if(gate == 'L') {
+            return 'R';
+        }
+        if(gate == 'R') {
+            return 'L';
+        }
+    }
+    else {
+        return gate;
+    }
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+    string fileName = argv[1];
+    ifstream inFS;
+    inFS.open(fileName);
     string config;
     string input;
-    cin >> config;
-    cin >> input;
+    inFS >> config;
+    inFS >> input;
     
     int size = input.size();
     cout << config << "->";

@@ -1,0 +1,6 @@
+get to $, go to new state
+if 2, continue reading
+if x, go to compare
+
+rejects if no 01 pair
+accepts if only 01 pair
