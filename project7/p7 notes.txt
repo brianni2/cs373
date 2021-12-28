@@ -1,0 +1,22 @@
+step 2
+	1) start at $
+	2) go to first . (x.)
+	3) move right, read and mark symbol (0=a, 1=b)
+		if no symbol to mark, move right past y.
+			if no symbol to mark, |x| = |y|. go to step 4
+			if symbol to mark, |y| > |x|. go to step 3
+	4) move right, past # past second . (y.)
+		if no symbol to mark, |x| > |y|. go to step 4
+	5) move right, read and mark symbol
+	6) move left, past #, stop at marked symbol
+	7) repeat 3-6
+step 3
+	1) copy x to after y
+		0 path - read 0, wind past #, write 0 move left
+		1 path - read 1, wind past #, write 1 move left
+		x path - read x, wind past #, write 0 move left
+		y path - read y, wind past #, write 1 move left
+	2) go to y., move right and mark symbol
+	3) go to x., move right and append 0
+	4) repeat 2-3 until move left, stop at marked symbol, move right, # (no more y)
+	5) unmark y, append # at end of x
